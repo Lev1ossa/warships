@@ -1,0 +1,10 @@
+.warship {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  // height: 300px;
+}
+
+.title, .type, .nation, .level, .description {
+  text-align: center;
+}
