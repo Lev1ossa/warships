@@ -1,0 +1,56 @@
+.filtersWrapper {
+  display: flex;
+  height: 350px;
+  width: 500px;
+}
+
+.levelFilter, .nationFilter, .typeFilter {
+  list-style-type: none;
+  min-width: 100px;
+  height: 100%;
+}
+
+.typeImg, .nationImg {
+  margin-left: 5px;
+  width: 20px;
+}
+
+.levelItem, .nationItem, .typeItem {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.checkboxLabel {
+  margin-left: 5px;
+}
+
+.filterCheckbox {
+  appearance: none;
+  background-color: #1d2c31;
+  color: #2e3e44;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2e3e44;
+  border-radius: 2px;
+}
+
+.filterCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterCheckbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #47d29c;
+}
+
+.filterCheckbox:checked::before {
+  transform: scale(1);
+}

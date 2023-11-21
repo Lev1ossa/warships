@@ -1,10 +1,7 @@
-.header {
-  height: 10vh;
+.warships {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.title {
-  color: #47d29c;
+  min-height: 85vh;
 }

@@ -30,3 +30,26 @@ export type Vehicles = Vehicle[];
 export type VehiclesResponse = {
   vehicles: Vehicles;
 };
+
+export type vehicleFilters = {
+  level: string[];
+  nation: string[];
+  type: string[];
+  typeIcons: Record<string, string>;
+  nationIcons: Record<string, string>;
+};
+
+export type AppContextProps = {
+  levelFilter: string[];
+  nationFilter: string[];
+  typeFilter: string[];
+  setLevelFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setNationFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setTypeFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  addLevelFilter: (levelItem: string) => void;
+  removeLevelFilter: (levelItem: string) => void;
+  addNationFilter: (nationItem: string) => void;
+  removeNationFilter: (nationItem: string) => void;
+  addTypeFilter: (typeItem: string) => void;
+  removeTypeFilter: (typeItem: string) => void;
+};

@@ -1,9 +1,4 @@
 :root {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   #root,
   html,
   body {
@@ -15,4 +10,10 @@
 body {
   background-color: #152a63;
   color: #c8ccd8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

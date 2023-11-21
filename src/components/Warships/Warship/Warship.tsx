@@ -1,4 +1,4 @@
-import { Vehicle } from '../../types/types';
+import { Vehicle } from '../../../types/types';
 import styles from './Warship.module.scss';
 
 export function Warship(props: { vehicle: Vehicle }) {
@@ -19,7 +19,7 @@ export function Warship(props: { vehicle: Vehicle }) {
           src={type.icons.default}
           alt="type icon"
         />
-        <p className={styles.typeName}>{type.name}</p>
+        <p className={styles.typeName}>{type.title}</p>
       </div>
       <div className={styles.nation}>
         <img
@@ -27,7 +27,7 @@ export function Warship(props: { vehicle: Vehicle }) {
           src={nation.icons.small}
           alt="nation icon"
         />
-        <p className={styles.nationName}>{nation.name}</p>
+        <p className={styles.nationName}>{nation.title}</p>
       </div>
       <div className={styles.level}>{level}</div>
       <div className={styles.description}>{description}</div>
