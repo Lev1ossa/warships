@@ -11,19 +11,20 @@ export function WarshipsList() {
   if (error) return <pre>{error.message}</pre>;
 
   return (
-    <div className={styles.warshipsContainer}>
-      <h1>Warships</h1>
-      <div className={styles.warshipsList}>
-        {data ? (
-          <>
-            {data.vehicles.map((vehicle, idx) => (
-              <Warship key={`${vehicle.title}${idx}`} vehicle={vehicle} />
-            ))}
-          </>
-        ) : (
-          <p>Error</p>
-        )}
+    <main className={styles.main}>
+      <div className={styles.warshipsContainer}>
+        <div className={styles.warshipsList}>
+          {data ? (
+            <>
+              {data.vehicles.map((vehicle, idx) => (
+                <Warship key={`${vehicle.title}${idx}`} vehicle={vehicle} />
+              ))}
+            </>
+          ) : (
+            <p>Error</p>
+          )}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
