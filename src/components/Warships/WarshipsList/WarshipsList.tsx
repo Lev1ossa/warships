@@ -6,7 +6,7 @@ import { AppContext } from '../../App/Context/AppContext';
 import { WarshipsPagination } from '../WarshipsPagination/WarshipsPagination';
 
 export function WarshipsList() {
-  const { filteredVehicles } = useVehicles();
+  const { filteredVehiclesSlice } = useVehicles();
   const context = useContext(AppContext);
   const { numberOfVehicles } = context;
 
@@ -16,7 +16,7 @@ export function WarshipsList() {
       <div className={styles.warshipsList}>
         {numberOfVehicles ? (
           <>
-            {filteredVehicles.map((vehicle, idx) => (
+            {filteredVehiclesSlice.map((vehicle, idx) => (
               <Warship key={`${vehicle.title}${idx}`} vehicle={vehicle} />
             ))}
           </>
