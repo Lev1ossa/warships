@@ -1,0 +1,116 @@
+.filtersWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin-bottom: 15px;
+  border: 2px solid #10214F;
+  border-radius: 10px;
+  box-shadow: rgba(200, 200, 211, 0.2) 0px 1px 5px 5px;
+  padding: 10px;
+}
+
+.filtersBtn {
+  width: 100px;
+  height: 20px;
+  background: #50C878;
+  border: 2px solid #10214F;
+  border-radius: 5px;
+  color: black;
+  transition: all 0.3s;
+}
+
+.filtersBtn:hover {
+  background-color: greenyellow;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.filterTitle {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.levelBlock, .nationBlock, .typeBlock {
+  border: 2px solid #10214F;
+  border-radius: 10px;
+  box-shadow: rgba(200, 200, 211, 0.2) 0px 1px 5px 5px;
+  padding: 10px;
+}
+
+.levelFilter, .nationFilter, .typeFilter {
+  list-style-type: none;
+  height: 100%;
+}
+
+.typeImg, .nationImg {
+  margin-left: 5px;
+  width: 20px;
+}
+
+.levelItem, .nationItem, .typeItem {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.checkboxLabel {
+  margin-left: 5px;
+}
+
+.filterCheckbox {
+  appearance: none;
+  background-color: #1d2c31;
+  color: #2e3e44;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2e3e44;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.filterCheckbox:hover{
+  border-color: greenyellow;
+  cursor: pointer;
+}
+
+.filterCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterCheckbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #47d29c;
+}
+
+.filterCheckbox:checked::before {
+  transform: scale(1);
+}
+
+@media (max-width: 550px) {
+  .filtersWrapper {
+    width: 250px;
+  }
+
+  .filters {
+    justify-content: center;
+    gap: 20px;
+  }
+}

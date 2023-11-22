@@ -1,0 +1,36 @@
+.warship {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.title, .type, .nation, .level, .description {
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nationImg {
+  width: 20px;
+}
+
+.warship {
+  border: 2px solid #10214F;
+  border-radius: 10px;
+  box-shadow: rgba(200, 200, 211, .2) 0px 1px 5px 5px ;
+}
