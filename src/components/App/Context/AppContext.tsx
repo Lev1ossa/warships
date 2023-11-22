@@ -1,7 +1,5 @@
 import { createContext, useState } from 'react';
 import { AppContextProps } from '../../../types/types';
-// import { useVehicles } from '../../../hooks/useVehicles';
-
 export const AppContext = createContext({} as AppContextProps);
 
 export function AppContextProvider({
@@ -9,18 +7,11 @@ export function AppContextProvider({
 }: {
   children: React.ReactNode;
 }): React.ReactElement {
-  // const { vehicleFilters, loading } = useVehicles();
   const [levelFilter, setLevelFilter] = useState<string[]>([]);
   const [nationFilter, setNationFilter] = useState<string[]>([]);
   const [typeFilter, setTypeFilter] = useState<string[]>([]);
-
-  // useEffect(() => {
-  //   if (!loading) {
-  //     setLevelFilter([...vehicleFilters.level]);
-  //     setNationFilter([...vehicleFilters.nation]);
-  //     setTypeFilter([...vehicleFilters.type]);
-  //   }
-  // }, []);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numberOfVehicles, setNumberOfVehicles] = useState(0);
 
   const addLevelFilter = (levelItem: string) => {
     const newLevelFilter = [...levelFilter];
@@ -65,9 +56,13 @@ export function AppContextProvider({
         levelFilter,
         nationFilter,
         typeFilter,
+        currentPage,
+        numberOfVehicles,
         setLevelFilter,
         setNationFilter,
         setTypeFilter,
+        setCurrentPage,
+        setNumberOfVehicles,
         addLevelFilter,
         removeLevelFilter,
         addNationFilter,

@@ -43,9 +43,13 @@ export type AppContextProps = {
   levelFilter: string[];
   nationFilter: string[];
   typeFilter: string[];
+  currentPage: number;
+  numberOfVehicles: number;
   setLevelFilter: React.Dispatch<React.SetStateAction<string[]>>;
   setNationFilter: React.Dispatch<React.SetStateAction<string[]>>;
   setTypeFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  setNumberOfVehicles: React.Dispatch<React.SetStateAction<number>>;
   addLevelFilter: (levelItem: string) => void;
   removeLevelFilter: (levelItem: string) => void;
   addNationFilter: (nationItem: string) => void;

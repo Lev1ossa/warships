@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
-import { WARSHIPS_QUERY } from '../utils/constants';
+import { DEFAULT_VEHICLES_PER_PAGE, WARSHIPS_QUERY } from '../utils/constants';
 import { Vehicle, VehiclesResponse, vehicleFilters } from '../types/types';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../components/App/Context/AppContext';
 
 export const useVehicles = () => {
@@ -16,7 +16,13 @@ export const useVehicles = () => {
   const nationIcons = new Map<string, string>();
 
   const context = useContext(AppContext);
-  const { levelFilter, nationFilter, typeFilter } = context;
+  const {
+    currentPage,
+    levelFilter,
+    nationFilter,
+    typeFilter,
+    setNumberOfVehicles,
+  } = context;
 
   vehiclesData.forEach((vehicle) => {
     levels.push(`${vehicle.level}`);
@@ -37,16 +43,16 @@ export const useVehicles = () => {
     typeIcons: Object.fromEntries(typeIcons),
     nationIcons: Object.fromEntries(nationIcons),
   };
-  let filteredVehicles: Vehicle[];
+
+  let filteredVehiclesAll: Vehicle[];
   if (
     levelFilter.length === 0 &&
     nationFilter.length === 0 &&
     typeFilter.length === 0
   ) {
-    filteredVehicles = vehiclesData;
+    filteredVehiclesAll = vehiclesData;
   } else {
-    console.log('hey');
-    filteredVehicles = vehiclesData.filter((vehicle) => {
+    filteredVehiclesAll = vehiclesData.filter((vehicle) => {
       return (
         (levelFilter.length === 0
           ? true
@@ -61,7 +67,14 @@ export const useVehicles = () => {
     });
   }
 
-  console.log(levelFilter, nationFilter, typeFilter);
-  console.log(filteredVehicles);
+  const filteredVehicles = filteredVehiclesAll.slice(
+    (currentPage - 1) * DEFAULT_VEHICLES_PER_PAGE,
+    currentPage * DEFAULT_VEHICLES_PER_PAGE
+  );
+
+  useEffect(() => {
+    setNumberOfVehicles(filteredVehiclesAll.length);
+  }, [setNumberOfVehicles, filteredVehiclesAll.length]);
+
   return { vehiclesData, filteredVehicles, vehicleFilters, loading, error };
 };

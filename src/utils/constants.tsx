@@ -30,3 +30,7 @@ export const WARSHIPS_QUERY = gql`
     }
   }
 `;
+
+export const DEFAULT_MIN_PAGE = 1;
+
+export const DEFAULT_VEHICLES_PER_PAGE = 10;
