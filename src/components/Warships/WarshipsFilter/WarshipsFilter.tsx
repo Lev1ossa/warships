@@ -57,6 +57,7 @@ export function WarshipsFilter() {
       {showFilters ? (
         <div className={styles.filters}>
           <div className={styles.levelBlock}>
+            <p className={styles.filterTitle}>Level</p>
             <ul className={styles.levelFilter}>
               {vehicleFilters.level.map((levelItem) => (
                 <li key={levelItem} className={styles.levelItem}>
@@ -76,6 +77,7 @@ export function WarshipsFilter() {
             </ul>
           </div>
           <div className={styles.nationBlock}>
+            <p className={styles.filterTitle}>Nation</p>
             <ul className={styles.nationFilter}>
               {vehicleFilters.nation.map((nationItem) => (
                 <li key={nationItem} className={styles.nationItem}>
@@ -100,6 +102,7 @@ export function WarshipsFilter() {
             </ul>
           </div>
           <div className={styles.typeBlock}>
+            <p className={styles.filterTitle}>Type</p>
             <ul className={styles.typeFilter}>
               {vehicleFilters.type.map((typeItem) => (
                 <li key={typeItem} className={styles.typeItem}>
